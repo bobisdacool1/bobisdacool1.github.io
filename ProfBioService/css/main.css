@@ -87,6 +87,11 @@ h1 {
   overflow: hidden;
 }
 
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .navbar-wrap {
   width: 100%;
   background-color: #92b080;
@@ -551,6 +556,7 @@ h1 {
 
 .price .button.button-filled {
   margin-top: 100px;
+  margin-bottom: 140px;
 }
 
 .price p {
@@ -722,11 +728,6 @@ h1 {
           user-select: none;
 }
 
-.output input[type="number"]::-webkit-inner-spin-button, .output input[type="number"]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
 .output p {
   margin: 7px 30px 150px 40px;
 }
@@ -820,5 +821,181 @@ input.checkbox-item {
   display: none;
   margin: 0;
   padding: 0;
+}
+
+.feedback h1 {
+  color: #2e312c;
+  font-size: 56px;
+  letter-spacing: -1px;
+  text-align: center;
+  margin-bottom: 80px;
+  margin-top: 140px;
+}
+
+form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+form input, form textarea {
+  border: 3px solid #2e312c;
+  border-radius: 10px;
+  width: 560px;
+  padding: 22px;
+  font-size: 28px;
+  color: #526840;
+  line-height: 0;
+  margin-top: 58px;
+  font-weight: 600;
+}
+
+form input:focus, form textarea:focus {
+  outline: none;
+  border: 3px solid #2e312c;
+}
+
+form input::-webkit-input-placeholder, form textarea::-webkit-input-placeholder {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  color: #526840;
+  font-size: 28px;
+  letter-spacing: -2px;
+}
+
+form input:-ms-input-placeholder, form textarea:-ms-input-placeholder {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  color: #526840;
+  font-size: 28px;
+  letter-spacing: -2px;
+}
+
+form input::-ms-input-placeholder, form textarea::-ms-input-placeholder {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  color: #526840;
+  font-size: 28px;
+  letter-spacing: -2px;
+}
+
+form input::placeholder, form textarea::placeholder {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  color: #526840;
+  font-size: 28px;
+  letter-spacing: -2px;
+}
+
+form textarea {
+  line-height: 25px;
+  height: 100%;
+  resize: none;
+}
+
+form .buttons-wrap {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 110px;
+}
+
+form .buttons-wrap button {
+  font-size: 30px;
+  font-weight: 400;
+  color: #526840;
+  letter-spacing: -1px;
+}
+
+.inputs-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.about {
+  padding-top: 250px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.about h1 {
+  color: #2e312c;
+  font-size: 56px;
+  letter-spacing: -1px;
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.about p {
+  font-size: 24px;
+  color: #2e312c;
+  line-height: 24px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.about .row {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.about .row p {
+  font-size: 36px;
+  font-weight: 400;
+  letter-spacing: -3px;
+  color: #526840;
+}
+
+.footer {
+  min-height: 180px;
+  width: 100%;
+  background-color: #2e312c;
+}
+
+.footer p {
+  font-weight: 700;
+  font-size: 16px;
+  color: #fff;
+  padding: 40px;
+  margin: 0;
 }
 /*# sourceMappingURL=main.css.map */

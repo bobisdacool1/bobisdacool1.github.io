@@ -52,19 +52,19 @@ $('.popup-content .sub-img.disinfection').on('click', function(){
   $(this).css('background-image', mainImage)
   $('.popup-content .main-img.disinfection').css('background-image', subImage)
 })
-
+//Калькулятор
 $('.checkbox-item').on('click', function(){
   $(this).children('.checkmark').children().toggleClass('active')
-  var price = $('input[type="number"]').val() * 6.5 * $('i.active').length
+  var price = $('.calc-input').val() * 6.5 * $('i.active').length
   $('output').val(price)
 })
-$('.range').on('input change', (function(){
-  $('input[type="number"]').val($(this).val())
+$('.range').on('input.calc-input change', (function(){
+  $('input.calc-input[type="number"]').val($(this).val())
 }))
-$('input[type="number"]').on('input change', function(){
+$('input.calc-input[type="number"]').on('input.calc-input[type="number"] change', function(){
   $('input[type="range"]').val($(this).val())
 })
-$('input').on('input change', function priceCount(){
+$('input.calc-input').on('input.calc-input change', function(){
   var price = $(this).val() * 6.5 * $('i.active').length
   $('output').val(price)
 })
