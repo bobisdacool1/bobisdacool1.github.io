@@ -1,6 +1,6 @@
-$("a").click(function () {
-  return false;
-})
+// $("a").click(function () {
+//   return false;
+// })
 //Дезинсекция
 $('.service-item.disinsection img').on('click', function(){
   $('.popup-wrap.disinsection').fadeIn(400)
@@ -27,6 +27,11 @@ $('.service-item.disinfection img').on('click', function(){
 $('.popup-wrap.disinfection i.fa-times').on('click', function(){
   $('.popup-wrap.disinfection').fadeOut(400)
   $('body').toggleClass('ofh')
+})
+$('.popup-desc .button').on('click', function(){
+  $(this).parent().parent().parent().parent().parent().fadeOut(400)
+  $('body').toggleClass('ofh')
+  console.log($(this))
 })
 //Слайдер дезинсекция
 $('.popup-content .sub-img.disinsection').on('click', function(){
@@ -67,4 +72,40 @@ $('input.calc-input[type="number"]').on('input.calc-input[type="number"] change'
 $('input.calc-input').on('input.calc-input change', function(){
   var price = $(this).val() * 6.5 * $('i.active').length
   $('output').val(price)
+})
+
+function scrollToThe(id, ofefset) {
+  if (ofefset == undefined) {
+      ofefset = 0
+      $('html, body').animate({
+          scrollTop: $(id).offset().top - ofefset
+      }, 1200)
+  }
+  else {
+      $('html, body').animate({
+          scrollTop: $(id).offset().top - ofefset
+      }, 1200)
+  }
+
+  return false
+}
+
+///////////////////////////////////////////////////////
+//feedback
+///////////////////////////////////////////////////////
+$('.popup-wrap.disinsection .second-button').on('click', function(){
+  $('.feedback-i').removeClass('active')
+  $('.disinsection-i').addClass('active')
+})
+$('.popup-wrap.disinfection .second-button').on('click', function(){
+  $('.feedback-i').removeClass('active')
+  $('.disinsection-i').addClass('active')
+})
+$('.popup-wrap.deratization .second-button').on('click', function(){
+  $('.feedback-i').removeClass('active')
+  $('.deratization-i').addClass('active')
+})
+$('.popup-wrap.disinfection .second-button').on('click', function(){
+  $('.feedback-i').removeClass('active')
+  $('.disinfection-i').addClass('active')
 })

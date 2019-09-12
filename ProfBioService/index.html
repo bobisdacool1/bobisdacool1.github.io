@@ -18,19 +18,19 @@
     <div class="navbar container">
       <div class="navbar-brand">ПрофБиоСервис</div>
       <div class="navbar-nav">
-        <a href="" class="navbar-nav__item">Услуги</a>
-        <a href="" class="navbar-nav__item">Опыт</a>
-        <a href="" class="navbar-nav__item">Цены</a>
-        <a href="" class="navbar-nav__item">Оставить заявку</a>
-        <a href="" class="navbar-nav__item">О компании </a>
+        <a href="" onclick="scrollToThe ('#services', 100)" class="navbar-nav__item">Услуги</a>
+        <a href="" onclick="scrollToThe ('#advantage', )" class="navbar-nav__item">Опыт</a>
+        <a href="" onclick="scrollToThe ('#price')" class="navbar-nav__item">Цены</a>
+        <a href="" onclick="scrollToThe ('#feedback', 100)" class="navbar-nav__item">Оставить заявку</a>
+        <a href="" onclick="scrollToThe ('#about', -100)" class="navbar-nav__item">О компании </a>
       </div>
     </div>
   </div>
   <section class="hero" id="hero">
     <div class="container hero-container">
       <h1>Услуги по травле паразитов</h1>
-      <p>Наша компания предоставляет свои услуги клиентам уже длительное время. За время работы мы накопили большой опыт и завоевали доверие компаний.<br>Клиенты всегда могут <a href="#">посмотреть</a> наш действующий Сертификат Соответствия на проведение дезинсекции, дезинфекции и дератизации. <br> Мы используем инновационные дезинфекционные средства отечественного и импортного произовдства,имеющие сертификаты качества</p>
-      <button class="button button-o" href="#">Посмотреть цены</button>
+      <p>Наша компания предоставляет свои услуги клиентам уже длительное время. За время работы мы накопили большой опыт и завоевали доверие компаний.<br>Клиенты всегда могут <a href="img/certificate.png" download>посмотреть</a> наш действующий Сертификат Соответствия на проведение дезинсекции, дезинфекции и дератизации. <br> Мы используем инновационные дезинфекционные средства отечественного и импортного произовдства,имеющие сертификаты качества</p>
+      <button class="button button-o" href="#" onclick="scrollToThe ('#price')">Посмотреть цены</button>
     </div>
   </section>
   <section class="services" id="services">
@@ -51,7 +51,7 @@
           <span>Деизнфекция</span>
         </div>
       </div>
-      <button class="button button-filled">Заказать услуги</button>
+      <button class="button button-filled" onclick="scrollToThe ('#feedback', 100)">Заказать услуги</button>
       <div class="popup-wrap hidden disinsection">
         <div class="popup">
           <i class="fas fa-times"></i>
@@ -68,8 +68,8 @@
               <p>Необходима для восстановлдения комфортного существования без мелких раздражающих насекомых. В Москве дезинсекция проводится достаточно часто, причем не только на территории жилых и хохяйственных помещений, на производстве, но и непосредственно в очагах заражения на открытом воздухе и водоемах <br> Наша команда проводит дезинсекцию с учетом индивидуальных особенностей помещения. Дезинсекция может быть оргинизованна с использованием гелеобразных, жидкиъ и аэрозольных препаратов.
                 Раствор для дезинсекции выбирается исходя из того, какой состав будет актуален в каждом конкретном случае. Поэтому профессиональная дезинсекция - <span>наилучший выход,</span> если Вас стали атаковать насеокмые.<br>Дератизацию и дезинсекцию желательно проводить несколько раз в год в целях профилактики.</p>
               <div class="buttons-wrap">
-                <button class="button button-o">Посмотреть цены</button>
-                <button class="button button-o second-button">Заказать</button>
+                <button class="button button-o" onclick="scrollToThe ('#price')">Посмотреть цены</button>
+                <button class="button button-o second-button" onclick="scrollToThe ('#feedback', 100)">Заказать</button>
               </div>
             </div>
           </div>
@@ -90,8 +90,8 @@
               <h3>Что такое дератизация?</h3>
               <p>- это борьба с опасными вирусами и микрогрибами, возбуждающими инфекционные заболевания, устранение токсинов на объектах внешней среды. Дезинфекция также предполагает широкий комплекс мер, в основе которых лежит применение химических веществ, как и в других наших услугах</p>
               <div class="buttons-wrap">
-                <button class="button button-o">Посмотреть цены</button>
-                <button class="button button-o second-button">Заказать</button>
+                <button class="button button-o" onclick="scrollToThe ('#price')">Посмотреть цены</button>
+                <button class="button button-o second-button" onclick="scrollToThe ('#feedback', 100)">Заказать</button>
               </div>
             </div>
           </div>
@@ -112,8 +112,8 @@
               <h3>Что такое дезинфекция?</h3>
               <p>- это борьба с опасными вирусами и микрогрибами, возбуждающими инфекционные заболевания, устранение токсинов на объектах внешней среды. Дезинфекция также предполагает широкий комплекс мер, в основе которых лежит применение химических веществ, как и в других наших услугах</p>
               <div class="buttons-wrap">
-                <button class="button button-o">Посмотреть цены</button>
-                <button class="button button-o second-button">Заказать</button>
+                <button class="button button-o" onclick="scrollToThe ('#price')">Посмотреть цены</button>
+                <button class="button button-o second-button" onclick="scrollToThe ('#feedback', 100)">Заказать</button>
               </div>
             </div>
           </div>
@@ -194,7 +194,7 @@
           <output>3250</output>
         </div>
       </div>
-      <button class="button button-filled">Заказать услуги</button>
+      <button class="button button-filled" onclick="scrollToThe ('#feedback', 100)">Заказать услуги</button>
     </div>
   </section>
   <section class="feedback container" id="feedback">
@@ -206,9 +206,31 @@
         <input type="email" placeholder="Email">
         <input type="text" placeholder="Другие контактные данные">
       </div>
-      <textarea name="" id="" cols="30" rows="19" placeholder="Опишите проблему"></textarea>
+      <div class="check-area">
+        <textarea name="" id="" cols="30" rows="14" placeholder="Опишите проблему"></textarea>
+        <div class="checkboxes">
+          <div class="checkbox-item">
+            <div class="checkmark">
+              <i class="fas fa-check feedback-i disinsection-i"></i>
+            </div>
+            <p class="checkmark-desc" id="disinsection">Дезинсекция</p>
+          </div>
+          <div class="checkbox-item">
+            <div class="checkmark">
+              <i class="active fas fa-check feedback-i deratization-i"></i>
+            </div>
+            <p class="checkmark-desc" id="deratization">Дератизация</p>
+          </div>
+          <div class="checkbox-item">
+            <div class="checkmark">
+              <i class="fas fa-check feedback-i disinfection-i"></i>
+            </div>
+            <p class="checkmark-desc" id="disinfection">Дезинфекция</p>
+          </div>
+        </div>
+      </div>
       <div class="buttons-wrap">
-        <button class="button button-o" type="submit">Отвтьте мне на почту</button>
+        <button class="button button-o" type="submit">Ответьте мне на почту</button>
         <button class="button button-o" type="submit">Позвоните мне в течении 5 минут</button>
       </div>
     </form>
@@ -216,7 +238,8 @@
   </section>
   <section class="about container" id="about">
     <h1>О компании</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas 	</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur
+      adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas </p>
     <div class="row">
       <p>Телефон</p>
       <p>8 (929) 549-79-12</p>
