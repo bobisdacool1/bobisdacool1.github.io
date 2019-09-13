@@ -1548,5 +1548,8 @@ form .buttons-wrap button {
     letter-spacing: -1px;
     margin-top: 60px;
   }
+  .price-item {
+    width: 100% !important;
+  }
 }
 /*# sourceMappingURL=main.css.map */
