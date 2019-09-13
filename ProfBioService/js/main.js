@@ -1,6 +1,6 @@
-// $("a").click(function () {
-//   return false;
-// })
+$('a[href=""]').on('click', function () {
+  return false;
+})
 //Дезинсекция
 $('.service-item.disinsection img').on('click', function(){
   $('.popup-wrap.disinsection').fadeIn(400)
@@ -108,4 +108,32 @@ $('.popup-wrap.deratization .second-button').on('click', function(){
 $('.popup-wrap.disinfection .second-button').on('click', function(){
   $('.feedback-i').removeClass('active')
   $('.disinfection-i').addClass('active')
+})
+
+// $('document').keypress(function(){
+//   if (e.keyCode === 27){
+//     $('.navbar').css('display', 'none')
+//     $('.popup-wrap').fadeOut(400)
+//     $('body.ofh').toggleClass('ofh')
+//   }
+// })
+$(document).on('keydown', function(event) {
+  if (event.key == "Escape") {
+    $('.popup-wrap').fadeOut(400)
+    $('body.ofh').toggleClass('ofh')
+  }
+});
+$('form').on('focus', 'input[type=number]', function (e) {
+  $(this).on('mousewheel.disableScroll', function (e) {
+    e.preventDefault()
+  })
+})
+$('.hamburger-menu').on('click', function(){
+  $(this).toggleClass('active')
+  $('.navbar-nav-m').toggleClass('active')
+})
+$('.navbar-nav__item').on('click', function(){
+  $('.navbar-nav-m').toggleClass('active')
+  $('.popup-wrap').fadeOut(400)
+  $('body.ofh').toggleClass('ofh')
 })
