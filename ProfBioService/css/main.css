@@ -1436,7 +1436,10 @@ form .buttons-wrap button {
   .services-container p {
     text-align: center;
   }
-  .popup-desc p {
+  .popup .popup-content .popup-desc {
+    width: 85%;
+  }
+  .popup .popup-content .popup-desc p {
     width: 100%;
   }
   .advantage {
@@ -1453,6 +1456,97 @@ form .buttons-wrap button {
   }
   .row p {
     margin: 10px 0;
+  }
+  form {
+    width: 100%;
+  }
+  .inputs-wrap {
+    width: 100%;
+  }
+  .check-area .checkboxes {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 60%;
+  }
+  .check-area .checkboxes .checkbox-item {
+    font-weight: 600;
+    color: #526840;
+    font-size: 28px;
+    letter-spacing: -2px;
+  }
+}
+
+@media screen and (max-width: 449px) {
+  .navbar-brand-m {
+    font-size: 24px;
+  }
+  .price-output {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+  }
+  .feedback h1 {
+    font-size: 48px;
+  }
+  .popup-content .images-wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .popup-content .images-wrap .sub-img {
+    margin: 5px;
+  }
+  .popup h2 {
+    font-size: 48px;
+  }
+  .nav-wrap-m {
+    padding-right: 40px;
+    padding-left: 15px;
+  }
+  .hamburger-menu {
+    -webkit-transform: translateX(-10px);
+            transform: translateX(-10px);
+  }
+  .inputs-wrap input {
+    font-size: 20px;
+  }
+  .service-item img {
+    padding: 35px 3px;
+  }
+  .navbar-nav-m {
+    width: 75vw;
+  }
+  .navbar-nav-m a {
+    text-align: right;
+  }
+  .fa-times {
+    -webkit-transform: translatex(15px);
+            transform: translatex(15px);
+  }
+  .popup h2 {
+    font-size: 24px;
+  }
+  .navbar-brand-m {
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .about p, .hero p {
+    font-size: 18px;
+  }
+  .about h1 {
+    font-size: 42px;
+    letter-spacing: -1px;
+    margin-top: 60px;
   }
 }
 /*# sourceMappingURL=main.css.map */
