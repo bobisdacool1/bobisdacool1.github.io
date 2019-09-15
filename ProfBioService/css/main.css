@@ -145,7 +145,7 @@ li {
 }
 
 .hero {
-  padding-top: 320px;
+  padding-top: 260px;
   padding-bottom: 140px;
   min-height: 800px;
   background-image: url(../img/hero-bg.png);
@@ -171,6 +171,7 @@ li {
   font-size: 24px;
   margin-bottom: 70px;
   width: 55%;
+  text-shadow: 1px 1px 1px white;
 }
 
 .hero a {
