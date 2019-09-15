@@ -134,6 +134,7 @@ $('.hamburger-menu').on('click', function(){
 })
 $('.navbar-nav__item').on('click', function(){
   $('.navbar-nav-m').toggleClass('active')
+  $('.hamburger-menu').toggleClass('active')
   $('.popup-wrap').fadeOut(400)
   $('body.ofh').toggleClass('ofh')
 })

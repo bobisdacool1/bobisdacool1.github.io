@@ -63,7 +63,6 @@ a:hover {
 }
 
 .button-filled:hover {
-  text-decoration: underline;
   border-color: #92b080;
   color: #92b080;
   background-color: transparent;
@@ -576,7 +575,16 @@ li {
 }
 
 .price .subtitle {
-  margin-bottom: 200px;
+  margin-bottom: 150px;
+}
+
+.checkmark-desc {
+  font-size: 24px;
+  letter-spacing: -1px;
+}
+
+.check-area {
+  width: 45%;
 }
 
 .price-item-container {
@@ -911,6 +919,7 @@ form textarea {
   line-height: 25px;
   height: 100%;
   resize: none;
+  width: 100%;
 }
 
 form .buttons-wrap {
@@ -1044,6 +1053,10 @@ form .buttons-wrap button {
   color: #526840;
 }
 
+.about a:hover {
+  border: 0;
+}
+
 .footer {
   min-height: 180px;
   width: 100%;
@@ -1097,6 +1110,17 @@ form .buttons-wrap button {
         -ms-flex-align: center;
             align-items: center;
   }
+  form textarea {
+    height: 555px;
+  }
+  form .checkboxes {
+    position: relative;
+    right: 80%;
+    top: 0px;
+  }
+  form .checkboxes .checkbox-item {
+    margin: 0 40px;
+  }
   .output p {
     margin: 0px 15px 150px 0;
   }
@@ -1143,6 +1167,13 @@ form .buttons-wrap button {
   form .buttons-wrap button {
     margin: 20px 0;
     width: 560px;
+  }
+  form textarea {
+    width: 560px;
+    height: 400px;
+  }
+  form .checkboxes {
+    right: 40%;
   }
   .output p {
     margin: 0px 0px 20px 0;
@@ -1202,6 +1233,13 @@ form .buttons-wrap button {
     -webkit-transition: 0.3s;
     transition: 0.3s;
   }
+  .navbar-nav-m .navbar-nav__item {
+    color: #ffffff;
+    text-shadow: 1px 1px 6px #2e312c;
+  }
+  .navbar-nav-m .navbar-nav__item:hover {
+    border-bottom: 0;
+  }
   .navbar-nav-m a {
     font-size: 24px;
     font-weight: 600;
@@ -1215,7 +1253,9 @@ form .buttons-wrap button {
     height: 80px;
     width: 80px;
     background-color: #2e312c;
-    border-radius: 50%;
+    border-radius: 10px;
+    background-color: transparent;
+    border: 2px solid #000;
     position: relative;
   }
   .hamburger-menu:hover {
@@ -1282,12 +1322,16 @@ form .buttons-wrap button {
   }
   .subtitle {
     text-align: center;
+    margin-bottom: 70px;
   }
   .price-item-container {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     -ms-flex-pack: distribute;
         justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .price-item {
     width: 40%;
@@ -1300,6 +1344,7 @@ form .buttons-wrap button {
     margin-right: 20px;
   }
   .range {
+    display: none !important;
     margin: 0;
     width: 80% !important;
   }
@@ -1313,6 +1358,7 @@ form .buttons-wrap button {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    margin-top: 30px;
   }
   .row {
     -webkit-box-pack: justify;
@@ -1326,6 +1372,26 @@ form .buttons-wrap button {
   }
   .navbar-nav-m {
     width: 50vw;
+  }
+  form .check-area .checkboxes {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    left: 10%;
+  }
+  form .checkmark-desc {
+    font-size: 32px;
+    font-weight: 400;
+    color: #2e312c;
+    margin-top: 20px;
+    margin-bottom: 2px;
+    position: relative;
+    bottom: 10px;
+  }
+  .about h1 {
+    margin-top: 100px !important;
+    margin-bottom: 40px;
   }
 }
 
@@ -1379,6 +1445,32 @@ form .buttons-wrap button {
   }
   .button-filled {
     font-size: 32px;
+    letter-spacing: 0px;
+  }
+  .button {
+    padding: 30px 50px;
+  }
+  form input, form textarea {
+    width: 100%;
+  }
+  form .inputs-wrap, form .check-area {
+    width: 100%;
+  }
+  form .check-area .checkboxes {
+    left: 0;
+  }
+  form .buttons-wrap button {
+    width: 100%;
+  }
+  .advantage {
+    padding-bottom: 100px;
+  }
+  .advantage h1 {
+    margin-top: 80px;
+    margin-bottom: 40px;
+  }
+  .price .checkmark-desc {
+    margin: 10px 10px 10px 40px;
   }
 }
 
@@ -1448,14 +1540,27 @@ form .buttons-wrap button {
   .advantage h1 {
     margin-bottom: 50px;
   }
-  .row {
+  .about .row {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
   }
-  .row p {
-    margin: 10px 0;
+  .about .row .left {
+    margin: 0;
+    font-weight: 700 !important;
+  }
+  .about .row .right {
+    margin: 0;
+    position: relative;
+    left: 30px;
+    font-size: 22px;
+  }
+  .about .row p {
+    margin: 10px;
   }
   form {
     width: 100%;
@@ -1479,9 +1584,29 @@ form .buttons-wrap button {
     font-size: 28px;
     letter-spacing: -2px;
   }
+  .output {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .advantage h1 {
+    position: relative;
+    bottom: 40px;
+    margin-top: 50px;
+    margin-bottom: 40px;
+  }
+  .advantage {
+    padding-bottom: 40px !important;
+  }
 }
 
 @media screen and (max-width: 449px) {
+  .container {
+    padding: 0 20px;
+  }
+  .hamburger-menu {
+    width: 60px;
+    height: 60px;
+  }
   .navbar-brand-m {
     font-size: 24px;
   }
@@ -1510,7 +1635,7 @@ form .buttons-wrap button {
     font-size: 48px;
   }
   .nav-wrap-m {
-    padding-right: 40px;
+    padding-right: 15px;
     padding-left: 15px;
   }
   .hamburger-menu {
@@ -1518,6 +1643,33 @@ form .buttons-wrap button {
             transform: translateX(-10px);
   }
   .inputs-wrap input {
+    font-size: 20px;
+  }
+  .inputs-wrap input::-webkit-input-placeholder {
+    font-size: 20px;
+  }
+  .inputs-wrap input:-ms-input-placeholder {
+    font-size: 20px;
+  }
+  .inputs-wrap input::-ms-input-placeholder {
+    font-size: 20px;
+  }
+  .inputs-wrap input::placeholder {
+    font-size: 20px;
+  }
+  .check-area textarea {
+    font-size: 20px;
+  }
+  .check-area textarea::-webkit-input-placeholder {
+    font-size: 20px;
+  }
+  .check-area textarea:-ms-input-placeholder {
+    font-size: 20px;
+  }
+  .check-area textarea::-ms-input-placeholder {
+    font-size: 20px;
+  }
+  .check-area textarea::placeholder {
     font-size: 20px;
   }
   .service-item img {
@@ -1550,6 +1702,47 @@ form .buttons-wrap button {
   }
   .price-item {
     width: 100% !important;
+  }
+  .button {
+    font-size: 24px;
+    letter-spacing: 0;
+  }
+  .services h1 {
+    font-size: 36px;
+  }
+  .services p {
+    font-size: 20px;
+    padding-bottom: 50px;
+  }
+  .advantage h1 {
+    font-size: 36px;
+  }
+  .price .subtitle {
+    font-size: 18px;
+    margin-bottom: 60px;
+  }
+  .price-item input[type="number"] {
+    margin: 10px 0 40px 0;
+  }
+  .price .button.button-filled {
+    margin-bottom: 50px;
+  }
+  .feedback h1 {
+    margin-top: 50px;
+    margin-bottom: 0;
+  }
+  .about .row .right {
+    font-size: 16px;
+    left: 20px;
+  }
+  .output input[type="number"] {
+    margin: 27px 0 20px 0;
+  }
+  .advantage h1 {
+    top: 0;
+  }
+  .advantage-item {
+    margin: 20px 0;
   }
 }
 /*# sourceMappingURL=main.css.map */

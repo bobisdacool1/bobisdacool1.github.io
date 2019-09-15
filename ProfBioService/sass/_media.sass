@@ -18,6 +18,15 @@
     flex-wrap: wrap
     justify-content: space-around
     align-items: center
+  form 
+    textarea
+      height: 555px
+    .checkboxes
+      position: relative
+      right: 80%
+      top: 0px
+      .checkbox-item
+        margin: 0 40px
   .output
     p
       margin: 0px 15px 150px 0
@@ -43,6 +52,11 @@
       button
         margin: 20px 0
         width: 560px
+    textarea
+      width: 560px
+      height: 400px
+    .checkboxes
+      right: 40%
   .output
     p
       margin: 0px 0px 20px 0
@@ -78,6 +92,11 @@
     background-color: $gc
     transform: translateX(100%)
     transition: 0.3s
+    .navbar-nav__item
+      color: #ffffff
+      text-shadow: 1px 1px 6px $dgc
+      &:hover
+        border-bottom: 0
     a
       font-size: 24px
       font-weight: 600
@@ -88,7 +107,9 @@
     height: 80px
     width: 80px
     background-color: $dgc
-    border-radius: 50%
+    border-radius: 10px
+    background-color: transparent
+    border: 2px solid #000
     position: relative
     &:hover
       cursor: pointer
@@ -136,9 +157,11 @@
       line-height: 20px
   .subtitle
     text-align: center
+    margin-bottom: 70px
   .price-item-container
     flex-wrap: wrap
     justify-content: space-around
+    align-items: center
   .price-item
     width: 40%
     input[type="number"]
@@ -146,7 +169,8 @@
     p
       margin-top: 27px
       margin-right: 20px
-  .range 
+  .range
+    display: none!important
     margin: 0
     width: 80%!important
   .price-output
@@ -154,6 +178,7 @@
     flex-direction: row
     padding: 0
     align-items: center
+    margin-top: 30px
   .row
     justify-content: space-between
   .about .row p 
@@ -162,6 +187,22 @@
       letter-spacing: -1px
   .navbar-nav-m
     width: 50vw
+  form
+    .check-area .checkboxes
+      flex-direction: column
+      left: 10%
+    .checkmark-desc
+      font-size: 32px
+      font-weight: 400
+      color: $dgc
+      margin-top: 20px
+      margin-bottom: 2px
+      position: relative
+      bottom: 10px
+  .about
+    h1
+      margin-top: 100px !important
+      margin-bottom: 40px
 @media screen and ( max-width: 768px )
   .container
     width: 100%
@@ -189,6 +230,26 @@
     margin-bottom: 100px
   .button-filled
     font-size: 32px
+    letter-spacing: 0px
+  .button
+    padding: 30px 50px
+  form
+    input, textarea
+      width: 100%
+    .inputs-wrap, .check-area
+      width: 100%
+  form .check-area .checkboxes
+    left: 0
+  form .buttons-wrap button
+    width: 100%
+  .advantage 
+    h1
+      margin-top: 80px
+      margin-bottom: 40px
+    padding-bottom: 100px
+  .price
+    .checkmark-desc
+      margin: 10px 10px 10px 40px
 @media screen and ( max-width:  576px)
   .container
     padding: 0 30px
@@ -237,10 +298,19 @@
     padding-top: 100px
     h1
       margin-bottom: 50px
-  .row
+  .about .row
     flex-direction: column
+    align-items: flex-start
+    .left
+      margin: 0
+      font-weight: 700 !important
+    .right
+      margin: 0
+      position: relative
+      left: 30px
+      font-size: 22px
     p
-      margin: 10px 0
+      margin: 10px
   form
     width: 100%
   .inputs-wrap
@@ -254,7 +324,23 @@
       color: $gc
       font-size: 28px
       letter-spacing: -2px
+  .output
+    width: 100%
+    margin-bottom: 10px
+  .advantage 
+    h1
+      position: relative
+      bottom: 40px
+      margin-top: 50px
+      margin-bottom: 40px
+  .advantage
+    padding-bottom: 40px!important
 @media screen and ( max-width: 449px )
+  .container
+    padding: 0 20px
+  .hamburger-menu
+    width: 60px
+    height: 60px
   .navbar-brand-m
     font-size: 24px 
   .price-output
@@ -270,13 +356,20 @@
   .popup h2
     font-size: 48px
   .nav-wrap-m
-    padding-right: 40px
+    padding-right: 15px
     padding-left: 15px
   .hamburger-menu
     transform: translateX(-10px)
   .inputs-wrap
     input
       font-size: 20px
+      &::placeholder
+        font-size: 20px
+  .check-area
+    textarea
+      font-size: 20px
+      &::placeholder
+        font-size: 20px
   .service-item img
     padding: 35px 3px
   .navbar-nav-m
@@ -298,3 +391,35 @@
     margin-top: 60px
   .price-item
     width: 100% !important
+  .button
+    font-size: 24px
+    letter-spacing: 0
+  .services
+    h1
+      font-size: 36px
+    p
+      font-size: 20px
+      padding-bottom: 50px
+  .advantage 
+    h1
+      font-size: 36px
+  .price .subtitle
+      font-size: 18px
+      margin-bottom: 60px
+  .price-item input[type="number"]
+    margin: 10px 0 40px 0
+  .price .button.button-filled
+    margin-bottom: 50px
+  .feedback
+    h1
+      margin-top: 50px
+      margin-bottom: 0  
+  .about .row .right
+    font-size: 16px
+    left: 20px
+  .output input[type="number"]
+    margin: 27px 0 20px 0
+  .advantage h1
+    top: 0
+  .advantage-item
+    margin: 20px 0
