@@ -1,0 +1,115 @@
+.services
+  min-width: 100vh
+  padding-top: 150px
+  position: relative
+  h1
+    font-size: 48px
+    font-weight: 600
+    margin-bottom: 120px
+.card-wrap
+  display: flex
+  justify-content: space-between
+  align-items: flex-start
+  flex-wrap: wrap
+  width: 100%
+  margin-bottom: 130px
+  .card
+    width: 330px
+    height: 370px
+    background-color: #EBEBEB
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25)
+    padding: 30px 10px 30px 20px
+    position: relative
+  .card.left-border, .card.right-border
+    height: 430px    
+    position: relative
+    h3
+      margin-top: 50px
+  .card.left-border
+    .price
+      margin-top: 10px
+      margin-bottom: 40px
+    transform: skew(0deg, 12deg)
+    *
+      transform: skew(0deg, -12deg)
+  .card.right-border
+    transform: skew(0deg, -12deg)
+    *
+      transform: skew(0deg, 12deg)
+  p
+    margin: 0
+    font-size: 16px
+    font-weight: 400
+    margin-bottom: 20px
+    letter-spacing: -0.3px
+    width: 100%
+  .sub-p
+    position: absolute
+    margin: 0
+    margin-top: -25px
+    text-align: right
+    right: 0
+    padding-right: 10px
+  h3
+    margin: 0
+    margin-bottom: 40px
+    font-size: 24px
+    font-weight: 600
+  .price
+    margin-top: 30px
+    width: auto
+    display: inline-block
+    font-size: 24px
+    font-weight: 500
+    float: right
+    &::before, &::after
+      font-size: 14px
+      font-weight: 400
+    &::before
+      content: 'от '
+    &::after
+      content: ' рублей'
+  .button
+    display: block
+    margin: 0 auto
+    padding: 10px 60px
+    color: #fff
+    font-weight: 300
+    letter-spacing: 2px
+  &.row-1 .card.left-border,
+  &.row-1 .card.right-border, 
+    bottom: 20px
+  &.row-2 .card.left-border,
+  &.row-2 .card.right-border, 
+    bottom: 35px
+.button-1
+  background: linear-gradient(90deg, #4262B6 0.01%, #B642AA 100%)
+  position: relative
+.card .button
+  transition: 0.5s
+  &::after
+    content: ''
+    position: absolute
+    z-index: -1
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    background: inherit
+    filter: blur(20px)
+    opacity: 0
+    transition: 0.5s
+  &:hover
+    transform: scale(1.2)!important
+  &:hover::after
+    opacity: 1
+.button-2
+  background: linear-gradient(90deg, #B642AA 0.01%, #E84E4E 100%)
+.button-3
+  background: linear-gradient(90deg,#E84E4E 0.01%, #C7903F 100%)
+.button-4
+  background: linear-gradient(90deg, #C7903F 0.01%, #43BC56 100%)
+.button-5
+  background: linear-gradient(90deg, #43BC56 0.01%, #4389BC 100%)
+.button-6
+  background: linear-gradient(90deg, #4389BC 0.01%,  #6042B6 100%)
