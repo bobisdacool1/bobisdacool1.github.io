@@ -196,6 +196,44 @@
       </div>
     </div>
   </section>
+  <section class="feedback" id="feedback">
+    <div class="container feedback-container">
+      <h1>Свяжитесь со мной</h1>
+      <div class="contacts">
+        <div class="phone">
+          <i class="fas fa-phone-alt"></i>
+          <a href="tel:+79003604026">+79003604026</a>
+        </div>
+        <div class="socials">
+          <a href="https://wa.me/79003604026" target="_blank">
+            <div class="social-item whatsapp">
+              <i class="fab fa-whatsapp"></i>
+              <span>w.me/79003604026</span>
+            </div>
+          </a>
+          <a href="https://t.me/kalispeller" target="_blank">
+            <div class="social-item telegram">
+              <i class="fab fa-telegram-plane"></i>
+              <span>t.me/kalispeller</span>
+            </div>
+          </a>
+          <a href="viber://chat?number=+79003604026" target="_blank">
+            <div class="social-item viber">
+              <i class="fab fa-viber"></i>
+              <span>viber://79003604026</span>
+            </div>
+          </a>
+        </div>
+      </div>
+      <form action="mail.php">
+        <input type="text" placeholder="Как к вам обрщаться? *" required name="user_name">
+        <input type="email" placeholder="Введите email *" required name="user_email">
+        <input type="number" placeholder="Номер телефона" name="user_phone">
+        <textarea cols="30" rows="10" placeholder="Опишите проблему" name="user_problem"></textarea>
+        <button type="submit" wrap="hard" style="position: absolute">Отправить заявку</button>
+      </form>
+    </div>
+  </section>
   <script src="https://kit.fontawesome.com/3c507bb95c.js" crossorigin="anonymous"></script>
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery-migrate-1.2.1.min.js"></script>
