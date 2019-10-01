@@ -53,7 +53,7 @@
     box-shadow: 0px 0px 5px #fff
     &:hover
       transform: scale(1.2)
-      box-shadow: 0px 0px 20px #583DFF
+      box-shadow: 0px 0px 20px #fff
     &:hover .work-item-hidden
       opacity: 1
     &::after
@@ -97,7 +97,12 @@
         margin-left: -132px
         left: 50%
         text-shadow: 0px 0px 3px #fff
+        transition: 0.5s
+        &:hover
+          box-shadow: 0px 0px 10px #000
+          background-color: #000000 
+          color: $lc
   .work-item.active::after
     transition-delay: 0.7s
   .work-item.active .work-item-hidden
-    transition-delay: 0.7s
+    transition-delay: 1s
