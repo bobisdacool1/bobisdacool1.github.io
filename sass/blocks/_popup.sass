@@ -1,12 +1,11 @@
 .popup-wrap
   position: fixed
   top: 0
-  z-index: 2
   width: 100vw
   height: 100vh
   background: rgba(#000, .6)
   backdrop-filter: blur(10px)
-  z-index: 1
+  z-index: 4
   display: flex
   justify-content: center
   align-items: center
@@ -38,6 +37,7 @@
     background-position: center
     background-repeat: no-repeat
     box-shadow: 0px 0px 5px #000
+    transition: 0.3s
     &:hover
       cursor: pointer
   .main-img

@@ -1,10 +1,12 @@
 .navbar
+  position: absolute
   height: 80px
   width: 100%
   border-top: 1px solid $lc
   border-bottom: 1px solid $lc
   display: flex
-  margin-bottom: 100px
+  transition: background 0.3s
+  // margin-bottom: 100px
   a
     border-radius: 50px
     transition: 0.5s
@@ -26,3 +28,9 @@
   display: flex
   a
     margin: 0 5px
+.navbar.sticky
+  position: fixed
+  top: 0
+  z-index: 3
+  width: 100vw 
+  background: #050505

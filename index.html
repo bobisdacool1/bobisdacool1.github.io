@@ -12,6 +12,7 @@
 </head>
 
 <body>
+
   <section id="hero" class="hero" data-vide-bg="video/White-Keyboard">
     <div class="hero-wrap">
       <div class="container">
@@ -41,16 +42,16 @@
       </div>
       <navbar class="navbar" id="navbar">
         <div class="container navbar-container">
-          <a href="" class="cuttent">Главная</a>
+          <a href="" class="cuttent" onclick="scrollToThe('#hero')">Главная</a>
           <div class="nav">
-            <a href="">Цены</a>
-            <a href="">Портфолио</a>
-            <a href="">Вопросы?</a>
-            <a href="">Связаться</a>
+            <a href="" onclick="scrollToThe('#services', -130)">Цены</a>
+            <a href="" onclick="scrollToThe('#portfolio', 150)">Портфолио</a>
+            <a href="" onclick="scrollToThe('#faq', -50)">Вопросы?</a>
+            <a href="" onclick="scrollToThe('#feedback')">Связаться</a>
           </div>
         </div>
       </navbar>
-      <div class="container">
+      <div class="container hero-container">
         <h1>Создание сайтов с <br>бесплатными правками</h1>
         <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultricies sem sapien, sit amet tempus ex
           tincidunt ut. Maecenas in nisi ante. In at purus quis lectus semper tempor non id tortor. Morbi vitae maximus
@@ -342,7 +343,7 @@
           </a>
         </div>
       </div>
-      <form action="mail.php">
+      <form action="mail.php" method="POST">
         <input type="text" placeholder="Как к вам обрщаться? *" required name="user_name">
         <input type="email" placeholder="Введите email *" required name="user_email">
         <input type="number" placeholder="Номер телефона" name="user_phone">
