@@ -39,7 +39,8 @@ $('.hamburger-button').on('click', function () {
   $('.nav').toggleClass('active');
 });
 $('.nav a').on('click', function(){
-  $(this).parent().toggleClass('active')
+  $(this).parent().removeClass('active');
+  $('.hamburger-button').removeClass('active');
 });
 //popup-slider
 $('.sub-img').on('click', function () {

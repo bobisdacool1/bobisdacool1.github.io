@@ -6,8 +6,11 @@
     min-height: 1000px !important
   .works-wrap
     flex-direction: column
+@media screen and ( max-width:  768px)
+  .portfolio .works-wrap
+    margin-top: 50px
 @media screen and ( max-width:  480px)
-  .portfolio
-    min-height: 1100px !important
   .portfolio h1
     font-size: 36px
+  .portfolio .work-item:hover
+    transform: scale(1)
