@@ -1,0 +1,62 @@
+@media screen and ( max-width: 768px )
+  .nav
+    flex-direction: column
+    height: 100vh
+    position: absolute
+    top: 0
+    right: 0
+    padding-top: 80px
+    background-color: #050505
+    margin-top: 80px
+    width: 50vw
+    transition: 0.5s
+    transform: translateX(100%)
+    &.active
+      transform: (translateX(0))
+    a
+      margin: 20px 0
+      padding-left: 40px
+  .hamburger-button
+    height: 60px
+    width: 60px
+    background-color: #050505
+    border-radius: 10px
+    background-color: transparent
+    border: 2px solid #fff
+    position: relative
+    display: none
+    &.visible
+      display: flex !important
+    &:hover
+      cursor: pointer
+    span, span::before, span::after
+      position: absolute
+      top: 50%
+      margin-top: -1px
+      width: 30px
+      right: 50%
+      margin-right: -15px
+      height: 2px
+      background-color: #fff
+    span::before, span::after
+      content: ''
+      transition: 0.5s
+      display: block
+    span
+      &::before
+        transform: translateY(-7px)
+      &::after
+        transform: translateY(7px)
+    &.active
+      span
+        &::before
+          transform: rotate(35deg)
+          transform-origin: right bottom
+          width: 10px
+        &::after
+          transform: rotate(-35deg)
+          transform-origin: right top
+          width: 10px
+@media screen and ( max-width: 450px )
+  .nav
+    width: 70vw

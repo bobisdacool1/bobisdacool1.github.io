@@ -1,75 +1,98 @@
 $('.work-item').on('hover', function () {
-  $(this).toggleClass('active')
-})
+  $(this).toggleClass('active');
+});
 $('a[href=""]').click(function (e) {
   e.preventDefault();
-})
-//popup in
-$('.work-item-hidden a.button').on('click', function (e) {
-  e.preventDefault()
-
-  var _class = ($(this).attr('class').split(' ')[1])
-  $('.popup-wrap').removeClass('hidden')
-  $('.popup.hidden.' + _class).removeClass('hidden')
-  $('body').addClass('ofh')
-})
-
-//popup out
-$('.popup i').on('click', function (e) {
-
-  var _class = ($(this).parent().attr('class').split(' ')[1])
-  $('.popup-wrap').addClass('hidden')
-  $('.popup.' + _class).addClass('hidden')
-  $('body').removeClass('ofh')
-})
-$('.button-offer').on('click', function(e){
-  e.preventDefault()
-
-  var _class = ($(this).parent().attr('class').split(' ')[1])
-  $('.popup-wrap').addClass('hidden')
-  $('.popup.' + _class).addClass('hidden')
-  $('body').removeClass('ofh')
-  scrollToThe('#feedback')
-})
-$(document).on('keyup',function(evt) {
-    if (evt.keyCode == 27) {
-      
-      $('.popup-wrap').addClass('hidden')
-      $('.popup').addClass('hidden')
-      $('body').removeClass('ofh')
-    }
 });
-//popup slider
-$('.sub-img').on('click', function(){
-  let sub = $(this).css('background-image')
-  let main = $(this).parent().children('.main-img')
-  $(this).css('background-image', main)
-  $(this).parent().children('.main-img').css('background-image', sub)
-})
 
-var ofefset = 0
+var ofefset = 0;
 function scrollToThe(id, ofefset) {
-    if (ofefset == undefined) {
-        ofefset = 0
-        $('html, body').animate({
-            scrollTop: $(id).offset().top - ofefset
-        }, 1200)
-    }
-    else {
-        $('html, body').animate({
-            scrollTop: $(id).offset().top - ofefset
-        }, 1200)
-    }
+  if (ofefset == undefined) {
+    ofefset = 0;
+    $('html, body').animate({
+      scrollTop: $(id).offset().top - ofefset
+    }, 1200);
+  }
+  else {
+    $('html, body').animate({
+      scrollTop: $(id).offset().top - ofefset
+    }, 1200);
+  }
 
-    return false
+  return false;
 }
 //nav
 var height = $('.navbar').offset().top
 
-$(window).on('scroll', function(){
-  if ($(this).scrollTop() > height){
-    $('.navbar').addClass('sticky')
+$(window).on('scroll', function () {
+  if ($(this).scrollTop() > height) {
+    $('.navbar').addClass('sticky');
+    // $('.hamburger-button').addClass('visible')
   } else {
-    $('.navbar').removeClass('sticky')
+    $('.navbar').removeClass('sticky');
+    // $('.hamburger-button').removeClass('visible')
   }
-})
+});
+//responsive nav
+$('.hamburger-button').on('click', function () {
+  $(this).toggleClass('active');
+  $('.nav').toggleClass('active');
+});
+$('.nav a').on('click', function(){
+  $(this).parent().toggleClass('active')
+});
+//popup-slider
+$('.sub-img').on('click', function () {
+  var _main = $(this).parent().children('.main-img').css('background');
+  var _sub = $(this).css('background');
+  $(this).parent().children('.main-img').css('background', _sub);
+  $(this).css('background', _main);
+});
+//popup in
+$('.work-item-hidden a').on('click', function () {
+  $('.popup-wrap.hidden').fadeIn();
+  $('.popup.hidden.' + $(this).attr('class').split(' ')[1]).fadeIn();
+  $('.popup-wrap.hidden').removeClass('hidden');
+  $('.popup.hidden.' + $(this).attr('class').split(' ')[1]).removeClass('hidden');
+  stopScrolling();
+});
+//popup out
+$('.popup .close').on('click', function () {
+  $('.popup-wrap').fadeOut();
+  $('.popup-wrap').addClass('hidden');
+  $(this).parent().parent().parent().fadeOut();
+  $(this).parent().parent().parent().addClass('hidden');
+  continueScrolling();
+});
+$(document).on('keyup', function (evt) {
+  if (evt.keyCode == 27) {
+    $('.popup-wrap').fadeOut();
+    $('.popup-wrap').addClass('hidden');
+    $('.popup').fadeOut();
+    $('.popup').addClass('hidden');
+    continueScrolling();
+  }
+});
+$('.popup a.offer').on('click', function () {
+  continueScrolling();
+  $('.popup-wrap').fadeOut();
+  $('.popup-wrap').addClass('hidden');
+  $(this).parent().parent().parent().fadeOut();
+  $(this).parent().parent().parent().addClass('hidden');
+  scrollToThe('#feedback', 80);
+});
+//ofh
+var lastTop;
+
+function stopScrolling() {
+    lastTop = $(window).scrollTop();      
+    $('body').addClass( 'noscroll' )          
+         .css( { top: -lastTop } )        
+         ;            
+}
+
+function continueScrolling() {                    
+
+    $('body').removeClass( 'noscroll' );      
+    $(window).scrollTop( lastTop );       
+}         

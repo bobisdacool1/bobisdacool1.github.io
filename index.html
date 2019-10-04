@@ -43,11 +43,14 @@
       <navbar class="navbar" id="navbar">
         <div class="container navbar-container">
           <a href="" class="cuttent" onclick="scrollToThe('#hero')">Главная</a>
+          <div class="hamburger-button visible">
+            <span></span>
+          </div>
           <div class="nav">
-            <a href="" onclick="scrollToThe('#services', -130)">Цены</a>
+            <a href="" onclick="scrollToThe('#services', -50)">Цены</a>
             <a href="" onclick="scrollToThe('#portfolio', 150)">Портфолио</a>
-            <a href="" onclick="scrollToThe('#faq', -50)">Вопросы?</a>
-            <a href="" onclick="scrollToThe('#feedback')">Связаться</a>
+            <a href="" onclick="scrollToThe('#faq', 30)">Вопросы?</a>
+            <a href="" onclick="scrollToThe('#feedback', 80)">Связаться</a>
           </div>
         </div>
       </navbar>
@@ -56,15 +59,15 @@
         <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultricies sem sapien, sit amet tempus ex
           tincidunt ut. Maecenas in nisi ante. In at purus quis lectus semper tempor non id tortor. Morbi vitae maximus
           nunc, non ultricies libero. Curabitur vel auctor diam.</p>
-        <a href="" class="button button-o">Посмотреть портфолио</a>
+        <a href="" onclick="scrollToThe('#portfolio', 220)" class="button button-o">Посмотреть портфолио</a>
       </div>
     </div>
   </section>
   <section class="services" id="services">
     <div class="container">
       <h1>Чем я могу быть полезен?</h1>
-      <div class="card-wrap row-1">
-        <div class="card right-border">
+      <div class="card-wrap">
+        <div class="card right-border row-1">
           <h3>Landing page</h3>
           <p>1 страница</p>
           <p>Презентует вашу компанию в сети</p>
@@ -73,7 +76,7 @@
           <p class="price">12 000</p>
           <a href="" class="button button-1">Подробнее</a>
         </div>
-        <div class="card center-border">
+        <div class="card center-border row-1">
           <h3>Сайт-визитка</h3>
           <p>2-4 страницы</p>
           <p>Рассказывает о вашей компании</p>
@@ -81,7 +84,7 @@
           <p class="price">20 000</p>
           <a href="" class="button button-2">Подробнее</a>
         </div>
-        <div class="card left-border">
+        <div class="card left-border row-1">
           <h3>Рекламная компания</h3>
           <p>SEO и контекстная реклама</p>
           <p>Увеличение чилса посетителей</p>
@@ -89,9 +92,7 @@
           <p class="price">2 000</p>
           <a href="" class="button button-3">Подробнее</a>
         </div>
-      </div>
-      <div class="card-wrap row-2">
-        <div class="card left-border">
+        <div class="card row-2 left-border">
           <h3>Адаптивность</h3>
           <p>Создание мобильной версии</p>
           <p>Пользователи телефонов не</p>
@@ -100,7 +101,7 @@
           <p class="price">4 000</p>
           <a href="" class="button button-6">Подробнее</a>
         </div>
-        <div class="card center-border">
+        <div class="card center-border row-2">
           <h3>Редизайн сайта</h3>
           <p>Улучшение старого дизайна</p>
           <p>Увеличивает конверсию</p>
@@ -108,7 +109,7 @@
           <p class="price">6 000</p>
           <a href="" class="button button-5">Подробнее</a>
         </div>
-        <div class="card right-border">
+        <div class="card right-border row-2">
           <h3>Доработка</h3>
           <p>Улучшение вашего сайта</p>
           <p>Анализ, админ-панель и тд</p>
@@ -147,116 +148,114 @@
     </div>
 
     <div class="popup-wrap hidden">
-      <div class="container">
-        <div class="popup profbioservice hidden">
-          <i class="fas fa-times-circle close"></i>
-          <div class="left">
-            <div class="img-wrap">
-              <div class="main-img"></div>
-              <div class="sub-img sub-img-1"></div>
-              <div class="sub-img sub-img-2"></div>
-              <div class="sub-img sub-img-3"></div>
-            </div>
+      <div class="popup hidden profbioservice">
+        <div class="popup-content">
+          <div class="close"><i class="far fa-window-close"></i></div>
+          <h2>Профбиосервис</h2>
+          <div class="image-slider">
+            <div class="main-img img-1"></div>
+            <div class="sub-img img-2"></div>
+            <div class="sub-img img-3"></div>
+            <div class="sub-img img-4"></div>
           </div>
-          <div class="right">
-            <h2>ПрофБиоСервис</h2>
-            <div class="desc">
-              <h4>Задача</h4>
-              <p>lorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem
-                loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem
-                loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem
-                loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem
-                loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem
-                loremlorem loremlorem loremlorem </p>
-            </div>
-            <div class="attr-wrap">
-              <div class="attr">
+          <div class="desc">
+            <h4>Задача</h4>
+            <p>lorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem
+              loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem
+              loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem
+              loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem
+              loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem
+              loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem
+              loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem lorem
+            </p>
+            <div class="attr">
+              <div class="attr-item">
                 <span>Сроки</span>
                 <p>2 недели</p>
               </div>
-              <div class="attr">
+              <div class="attr-item">
                 <span>Стоимость</span>
                 <p>12 000 рублей</p>
               </div>
             </div>
           </div>
-          <div class="buttons-wrap">
-            <a href="" class="button button-o" target="_blank">Перейти на сайт</a>
-            <a href="" class="button button-o button-offer">Хочу такой же</a>
+          <div class="btn-wrap">
+            <a href="" class="button button-o">Перейти на сайт</a>
+            <a href="" class="button button-o offer">Хочу такой же</a>
           </div>
         </div>
-        <div class="popup profbioservice-2 hidden">
-          <i class="fas fa-times-circle close"></i>
-          <div class="left">
-            <div class="img-wrap">
-              <div class="main-img"></div>
-              <div class="sub-img sub-img-1"></div>
-              <div class="sub-img sub-img-2"></div>
-              <div class="sub-img sub-img-3"></div>
-            </div>
+      </div>
+      <div class="popup hidden profbioservice-2">
+        <div class="popup-content">
+          <div class="close"><i class="far fa-window-close"></i></div>
+          <h2>Профбиосервис 2</h2>
+          <div class="image-slider">
+            <div class="main-img img-1"></div>
+            <div class="sub-img img-2"></div>
+            <div class="sub-img img-3"></div>
+            <div class="sub-img img-4"></div>
           </div>
-          <div class="right">
-            <h2>ПрофБиоСервис</h2>
-            <div class="desc">
-              <h4>Задача</h4>
-              <p>lorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem
-                loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem
-                loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem
-                loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem
-                loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem
-                loremlorem loremlorem loremlorem </p>
-            </div>
-            <div class="attr-wrap">
-              <div class="attr">
+          <div class="desc">
+            <h4>Задача</h4>
+            <p>lorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem
+              loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem
+              loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem
+              loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem
+              loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem
+              loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem
+              loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem lorem
+            </p>
+            <div class="attr">
+              <div class="attr-item">
                 <span>Сроки</span>
                 <p>2 недели</p>
               </div>
-              <div class="attr">
+              <div class="attr-item">
                 <span>Стоимость</span>
                 <p>12 000 рублей</p>
               </div>
             </div>
           </div>
-          <div class="buttons-wrap">
-            <a href="" class="button button-o" target="_blank">Перейти на сайт</a>
-            <a href="" class="button button-o button-offer">Хочу такой же</a>
+          <div class="btn-wrap">
+            <a href="" class="button button-o">Перейти на сайт</a>
+            <a href="" class="button button-o offer">Хочу такой же</a>
           </div>
         </div>
-        <div class="popup profbioservice-3 hidden">
-          <i class="fas fa-times-circle close"></i>
-          <div class="left">
-            <div class="img-wrap">
-              <div class="main-img"></div>
-              <div class="sub-img sub-img-1"></div>
-              <div class="sub-img sub-img-2"></div>
-              <div class="sub-img sub-img-3"></div>
-            </div>
+      </div>
+      <div class="popup hidden profbioservice-3">
+        <div class="popup-content">
+          <div class="close"><i class="far fa-window-close"></i></div>
+          <h2>Профбиосервис 3</h2>
+          <div class="image-slider">
+            <div class="main-img img-1"></div>
+            <div class="sub-img img-2"></div>
+            <div class="sub-img img-3"></div>
+            <div class="sub-img img-4"></div>
           </div>
-          <div class="right">
-            <h2>ПрофБиоСервис</h2>
-            <div class="desc">
-              <h4>Задача</h4>
-              <p>lorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem
-                loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem
-                loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem
-                loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem
-                loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem
-                loremlorem loremlorem loremlorem </p>
-            </div>
-            <div class="attr-wrap">
-              <div class="attr">
+          <div class="desc">
+            <h4>Задача</h4>
+            <p>lorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem
+              loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem
+              loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem
+              loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem
+              loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem
+              loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem
+              loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem lorem
+            </p>
+            <div class="attr">
+              <div class="attr-item">
                 <span>Сроки</span>
                 <p>2 недели</p>
               </div>
-              <div class="attr">
+              <div class="attr-item">
                 <span>Стоимость</span>
                 <p>12 000 рублей</p>
               </div>
             </div>
           </div>
-          <div class="buttons-wrap">
-            <a href="" class="button button-o" target="_blank">Перейти на сайт</a>
-            <a href="" class="button button-o button-offer">Хочу такой же</a>
+          <div class="btn-wrap">
+            <a href="" class="button button-o">Перейти на сайт</a>
+            <a href="" class="button button-o offer">Хочу такой же</a>
           </div>
         </div>
       </div>
@@ -347,8 +346,8 @@
         <input type="text" placeholder="Как к вам обрщаться? *" required name="user_name">
         <input type="email" placeholder="Введите email *" required name="user_email">
         <input type="number" placeholder="Номер телефона" name="user_phone">
-        <textarea cols="30" rows="10" placeholder="Опишите проблему" name="user_problem"></textarea>
-        <button type="submit" wrap="hard" style="position: absolute">Отправить заявку</button>
+        <textarea cols="30" rows="10" placeholder="Опишите проблему" name="user_problem" wrap="hard"></textarea>
+        <button type="submit" style="position: absolute">Отправить заявку</button>
       </form>
     </div>
   </section>
