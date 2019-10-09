@@ -1,0 +1,60 @@
+.specific-item
+  background-color: #132f50
+  height: 580px
+  position: relative
+  background-image: url(../img/specific-item-left-bg.jpg)
+  background-repeat: no-repeat
+  z-index: 1
+  padding: 100px 0
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    background-image: url(../img/specific-item-rt-bg.jpg)
+    background-size: contain
+    background-repeat: no-repeat
+    background-position: top right
+    z-index: -2
+.specific-item-container
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: space-between
+  color: #fff
+  text-shadow: 0px 0px 3px #000
+  z-index: 1
+  h2
+    font-size: 30px
+    margin-bottom: 30px
+    +bold
+  p
+    font-size: 20px
+    text-align: center
+    margin-bottom: 60px
+    +reg
+  input
+    background-color: #f2f2f2
+    padding: 30px
+    width: 370px
+    margin-bottom: 60px
+    box-sizing: border-box
+    border: none
+    margin-right: 25px
+    height: 70px
+    box-shadow: 0px 0px 10px 5px #132f50  
+  button
+    width: 370px
+    background-color: #f7b516
+    height: 70px
+    box-shadow: 0px 0px 10px 5px #132f50  
+  span
+    font-size: 14px
+    margin-bottom: 15px
+    text-shadow: 0px 0px 4px #000  
+  .phone
+    font-size: 30px
+    +bold
+    text-shadow: 0px 0px 4px #132f50 

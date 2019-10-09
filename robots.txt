@@ -1,0 +1,7 @@
+User-agent: *
+
+Disallow: /phpmailer/
+Disallow: /sass/
+Disallow: /js/
+Disallow: /cgi-bin/
+Sitemap: http://kalispeller.ru/sitemap.xml
