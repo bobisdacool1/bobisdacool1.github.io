@@ -1,3 +1,60 @@
+<?php
+//including libs
+require 'rb.php';
+require 'cookies.php';
+
+//connect to database
+R::setup(
+  'mysql:host=85.119.149.127; dbname=kalispel_users',
+  'kalispel_root',
+  'L6o8T6c1'
+);
+
+//config
+$cookie_key = 'visited-cache';
+$ip = $_SERVER['REMOTE_ADDR'];
+$visited = R::findOne('visited', 'ip = ?', array($ip));
+$cookied = CookieManager::stored($cookie_key);
+
+
+//getting time when been open
+if (!$visited && !$cookied) {
+  //Create cookies and inject ip
+  $time = time();
+  $visited = R::dispense('visited');
+  $visited->visit = $time;
+  $visited->ip = $ip;
+  R::store($visited);
+  CookieManager::store($cookie_key, json_encode(array(
+    'id' => $visited->id,
+    'visit' => $time
+  )));
+} else {
+  //ip check
+  if ($visited) {
+    //getting time
+    $time = $visited['visit'];
+    //adding cookies
+    CookieManager::store($cookie_key, json_encode(array(
+      'id' => $visited->id,
+      'visit' => $time
+    )));
+  }
+  //cookies
+  else {
+    //getting time
+    $c = (array) json_decode(CookieManager::read($cookie_key), true);
+    $time = $c['visit'];
+    //ip injection
+    $visited = R::dispense('visited');
+    $visited->visit = $time;
+    $visited->ip = $ip;
+    R::store($visited);
+  }
+}
+$breakTime = $time + (60 * 60 * 24);
+$leftTime = $breakTime - time();
+?>
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -7,15 +64,17 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Разработка, доработка, продвижение сайтов для малого и среднего бизнеса.</title>
   <meta name="keywords" content="разработка сайтов, создание сайтов, заказать сайт, купить сайт, сайт цена, продвижение сайтов, создание и продвижение сайтов, разработка и продвижение сайтов, seo оптимизация, заказать контекстную рекламу, раскрутка сайта, веб специалист, веб-мастер">
-  <meta name="description"
-    content="В современном мире не предсталяется возможным ведение бизнеса без интернет ресурса. Огромное количество потенциальных клиентов прямо сейчас в поиске ваших услуг. Сделайте из них покупателей!">
-  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:300,400,400i,500,600&display=swap&subset=cyrillic"
-    rel="stylesheet">
-  <link rel="stylesheet" href="/css/main.css">
+  <meta name="description" content="В современном мире не предсталяется возможным ведение бизнеса без интернет ресурса. Огромное количество потенциальных клиентов прямо сейчас в поиске ваших услуг. Сделайте из них покупателей!">
   <link rel="icon" href="img/icon.png">
 </head>
 
 <body>
+  <!-- Count time till discount -->
+  <script>
+    var time = <?php echo $leftTime; ?>;
+  </script>
+  <!-- font-awesome -->
+  <script src="https://kit.fontawesome.com/3c507bb95c.js" crossorigin="anonymous"></script>
 
   <section id="hero" class="hero" data-vide-bg="video/White-Keyboard">
     <div class="hero-wrap">
@@ -60,11 +119,16 @@
       </navbar>
       <div class="container hero-container">
         <h1>Создание сайтов с <br>бесплатными правками</h1>
-        <p>Здравствуйте. Я делаю сайты для малого и среднего бизнеса. Я не делаю интернет-магазины, я делаю только одностраничные сайты, которые позволяют презеновать вашу компанию в сети, найти ваших клиентов и собрать заявки с сайта. Закажите сайт, после разработки которого ничего не нужно переделовать и дорабатывать</p>
+        <p>Здравствуйте. Я делаю сайты для малого и среднего бизнеса. Я не делаю интернет-магазины, я делаю только
+          одностраничные сайты, которые позволяют презентовать вашу компанию в сети, найти ваших клиентов и собрать
+          заявки с сайта. Закажите сайт, после разработки которого ничего не нужно переделывать и дорабатывать</p>
         <a href="" onclick="scrollToThe('#portfolio', 220)" class="button button-o">Посмотреть портфолио</a>
       </div>
     </div>
   </section>
+  <!-- fonts -->
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:300,400,400i,500,600&display=swap&subset=cyrillic" rel="stylesheet">
+
   <section class="services" id="services">
     <div class="container">
       <h1>Чем я могу быть полезен?</h1>
@@ -163,7 +227,11 @@
           </div>
           <div class="desc">
             <h4>Задача</h4>
-            <p>Обратился клиент из Москвы, которому нужен был сайт. Заказчик не имел особого представления о том, какой этот сайт должен быть. В итоге мы подобрали тарифный план landing page, который включает в себя одну страницу. Работа проходила в следующем формате: прототип - удтверждение, дизайн - удтверждение, верстка - удтверждение, правки. В итоге клиент получил рабочий сайт, с версией для мобильных устроиств, настроенной яндекс.метрикой и онлайн-консультантом. Так же в виде небольшого бонуса был сделан логотип
+            <p>Обратился клиент из Москвы, которому нужен был сайт. Заказчик не имел особого представления о том, какой
+              этот сайт должен быть. В итоге мы подобрали тарифный план landing page, который включает в себя одну
+              страницу. Работа проходила в следующем формате: прототип - удтверждение, дизайн - удтверждение, верстка -
+              удтверждение, правки. В итоге клиент получил рабочий сайт, с версией для мобильных устроиств, настроенной
+              яндекс.метрикой и онлайн-консультантом. Так же в виде небольшого бонуса был сделан логотип
             </p>
             <div class="attr">
               <div class="attr-item">
@@ -195,7 +263,10 @@
           <div class="desc">
             <h4>Задача</h4>
             <p>
-              Обратился клиент, которому нужна была верстка. Заказчик имел с собой дизайн-макет для сайта, сроки были очень ограничены. Для заказчика была важна скорость работы и цена, поэтому было принято решение не делать верстку под мобильные устройства, а сделать только под широкоформатные мониторы. В итоге заказчик получил рабочий сайт за ограниченное время и за небольшую цену.
+              Обратился клиент, которому нужна была верстка. Заказчик имел с собой дизайн-макет для сайта, сроки были
+              очень ограничены. Для заказчика была важна скорость работы и цена, поэтому было принято решение не делать
+              верстку под мобильные устройства, а сделать только под широкоформатные мониторы. В итоге заказчик получил
+              верстку своего дизайн-макета за ограниченное время и за небольшую цену.
             </p>
             <div class="attr">
               <div class="attr-item">
@@ -226,12 +297,17 @@
           </div>
           <div class="desc">
             <h4>Задача</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc pulvinar gravida purus a placerat. Phasellus in elit laoreet massa scelerisque mollis. Donec vestibulum placerat diam eget malesuada. Nam aliquam leo eu elit sollicitudin tincidunt. Aliquam ut elit at purus ultricies aliquam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean vel viverra magna, vitae facilisis lacus. Donec et congue turpis. Fusce varius massa in cursus semper. Suspendisse ac condimentum lorem. Quisque ac convallis magna. Phasellus ex dolor, lobortis non porttitor in, ultricies ac quam. Maecenas nunc leo, commodo vel consectetur et, eleifend eu augue. Maecenas ac rhoncus urna. Nullam ullamcorper in odio sed scelerisque.
+            <p>
+              Обратился клиент, которому нужен был landing page. Заказчик четко обозначил главную цель вебсайта -
+              конвертировать посетителей в покупателей. Поэтому было принято решение создать много форм - собрать
+              заявки. Работа проходила в следующем формате: прототип - удтверждение, дизайн - удтверждение, верстка -
+              удтверждение, правки. В итоге клиент получил рабочий сайт, с версией для мобильных устроиств и
+              яндекс.метрикой
             </p>
             <div class="attr">
               <div class="attr-item">
                 <span>Сроки</span>
-                <p>1 недели</p>
+                <p>2 недели</p>
               </div>
               <div class="attr-item">
                 <span>Стоимость</span>
@@ -302,6 +378,29 @@
   <section class="feedback" id="feedback">
     <div class="container feedback-container">
       <h1>Свяжитесь со мной</h1>
+      <div class="discount">
+        <h2 class="first-h2">Только для тех кто дочитал до конца действет специальное предложение</h2>
+        <div class="clocker"></div>
+        <h2 class="second-h2">Оставите заявку в течение 24 часов и получите бонусы</h2>
+        <div class="row-wrap">
+          <div class="row">
+            <span>- SSL сертификат</span>
+            <p>- доверие к вашему сайту будет выше, благодаря надежному сертификату</p>
+          </div>
+          <div class="row">
+            <span>- Админ-панель</span>
+            <p>- Вам не нужно будет звать специалиста и деньги, прося поменять телефон</p>
+          </div>
+          <div class="row">
+            <span>- Установка на хостинг</span>
+            <p>- вам не нужно мучаться и разбираться в том, как “собрать” сайт</p>
+          </div>
+          <div class="row lastrow">
+            <span>- Поддержка в течении 3х месяцев</span>
+            <p>- Если вы найдете ошибку на сайте в течении трех месяцев - заменим бесплатно</p>
+          </div>
+        </div>
+      </div>
       <div class="contacts">
         <div class="phone">
           <i class="fas fa-phone-alt"></i>
@@ -329,19 +428,36 @@
         </div>
       </div>
       <form action="mail.php" method="POST">
+        <legend>Чего вы ждете?</legend>
         <input type="text" placeholder="Как к вам обрщаться? *" required name="user_name">
         <input type="email" placeholder="Введите email *" required name="user_email">
-        <input type="phone" placeholder="Номер телефона" name="user_phone">
+        <input type="phone" placeholder="Номер телефона (по желанию)" name="user_phone">
         <textarea cols="30" rows="10" placeholder="Опишите проблему" name="user_problem" wrap="hard"></textarea>
         <button type="submit" style="position: absolute">Отправить заявку</button>
       </form>
     </div>
   </section>
-  <script src="https://kit.fontawesome.com/3c507bb95c.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="/css/flipclock.css">
+  <link rel="stylesheet" href="/css/main.css">
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery-migrate-1.2.1.min.js"></script>
   <script src="js/jquery.vide.min.js"></script>
   <script src="js/jquery.maskedinput.min.js"></script>
+  <script>
+    window.replainSettings = {
+      id: '532e3ea4-06c7-4141-865a-3f9adc3098e1'
+    };
+    (function(u) {
+      var s = document.createElement('script');
+      s.type = 'text/javascript';
+      s.async = true;
+      s.src = u;
+      var x = document.getElementsByTagName('script')[0];
+      x.parentNode.insertBefore(s, x);
+    })('https://widget.replain.cc/dist/client.js');
+  </script>
+  <script src="js/flipclock.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 

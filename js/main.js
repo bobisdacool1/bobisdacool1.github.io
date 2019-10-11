@@ -4,7 +4,10 @@ $('.work-item').on('hover', function () {
 $('a[href=""]').click(function (e) {
   e.preventDefault();
 });
-
+$('a[href="#"]').click(function (e) {
+  e.preventDefault();
+  return false;
+});
 var ofefset = 0;
 function scrollToThe(id, ofefset) {
   if (ofefset == undefined) {
@@ -12,11 +15,13 @@ function scrollToThe(id, ofefset) {
     $('html, body').animate({
       scrollTop: $(id).offset().top - ofefset
     }, 1200);
+    console.log('gat')
   }
   else {
     $('html, body').animate({
       scrollTop: $(id).offset().top - ofefset
     }, 1200);
+    console.log('gat')
   }
 
   return false;
@@ -38,7 +43,7 @@ $('.hamburger-button').on('click', function () {
   $(this).toggleClass('active');
   $('.nav').toggleClass('active');
 });
-$('.nav a').on('click', function(){
+$('.nav a').on('click', function () {
   $(this).parent().removeClass('active');
   $('.hamburger-button').removeClass('active');
 });
@@ -61,8 +66,8 @@ $('.work-item-hidden a').on('click', function () {
 $('.popup .close').on('click', function () {
   $('.popup-wrap').fadeOut();
   $('.popup-wrap').addClass('hidden');
-  $(this).parent().parent().parent().fadeOut();
-  $(this).parent().parent().parent().addClass('hidden');
+  $('.popup').fadeOut();
+  $('.popup').addClass('hidden');
   continueScrolling();
 });
 $(document).on('keyup', function (evt) {
@@ -86,15 +91,32 @@ $('.popup a.offer').on('click', function () {
 var lastTop;
 
 function stopScrolling() {
-    lastTop = $(window).scrollTop();      
-    $('body').addClass( 'noscroll' )          
-         .css( { top: -lastTop } )        
-         ;            
+  lastTop = $(window).scrollTop();
+  $('body').addClass('noscroll').css({ top: -lastTop });
 }
 
-function continueScrolling() {                    
+function continueScrolling() {
 
-    $('body').removeClass( 'noscroll' );      
-    $(window).scrollTop( lastTop );       
+  $('body').removeClass('noscroll');
+  $(window).scrollTop(lastTop);
 }
 $('input[type="phone"]').mask('+7(999)999-99-99');
+
+var clock = new FlipClock($('.clocker'), {
+  clockFace: 'HourlyCounter',
+  autoStart: false
+});
+clock.setCountdown(true);
+clock.setTime(time);
+clock.start();
+$('.flip-clock-wrapper a').attr('href', null);
+
+$('body').on('click', function () {
+  if (time <= 0) {
+    $('.discount').addClass('hidden')
+    $('legend').addClass('hidden')
+    $('.').addClass('hidden')
+    $('legend').addClass('hidden')
+  }
+  console.log('scrolling')
+})
