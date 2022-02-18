@@ -1,13 +1,17 @@
 <!DOCTYPE html>
+<!-- saved from url=(0028)http://travelnotdrink.sn00.ru/ -->
 <html lang="ru">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<style>
-		body{margin:0;height:100vh;width:100vw;background-image:url(https://sun9-46.userapi.com/impg/UX6LxgxO6WZRLiI6keeP_2GSx6jhgu7kB49xMw/Lp-bPlLCN_w.jpg?size=591x797&quality=96&sign=9a18fe96499fb81d7586424a6b5b5dba&type=album);background-color:#000;background-repeat:no-repeat;background-position-x:center;background-position-y:10%;display:flex;justify-content:center;align-items:center;font-size:24px;font-family:sans-serif}.travel-face{display:flex;flex-direction:column;justify-content:center;align-items:center}.travel-phrase{margin-bottom:200px;text-align:center}.travel-time{display:flex;flex-wrap:wrap;justify-content:center}.travel-phrase,.travel-time__item{margin-right:22px;min-width:65px;background-color:rgba(255,255,255,.2);width:120px;height:120px;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center}.travel-time__item{margin-bottom:22px}
+		body{margin:0;height:100vh;width:100vw;background-image:url(https://sun9-46.userapi.com/impg/UX6LxgxO6WZRLiI6keeP_2GSx6jhgu7kB49xMw/Lp-bPlLCN_w.jpg?size=591x797&quality=96&sign=9a18fe96499fb81d7586424a6b5b5dba&type=album);background-color:#000;background-repeat:no-repeat;background-position-x:center;background-position-y:10%;display:flex;justify-content:center;align-items:center;font-size:24px;font-family:sans-serif}.travel-face{display:flex;flex-direction:column;justify-content:center;align-items:center}.travel-phrase{margin-bottom:200px;text-align:center}.travel-time{display:flex;flex-wrap:wrap;justify-content:center}.travel-phrase,.travel-time__item{margin-right:22px;min-width:65px;background-color:rgba(255,255,255,.2);width:120px;height:120px;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center}.travel-time__item{margin-bottom:22px}.particles-js-canvas-el{position:absolute}
 	</style>
 	<title>Время до поездочки</title>
 </head>
-<body>
+<body id="body">
 
 <div class="travel-face">
 	<div class="travel-phrase">
@@ -40,9 +44,10 @@
 		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
 		crossorigin="anonymous">
 </script>
-
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script>
 	var travelDate=new Date($(".js-travel__date").data("date"));function updateTimer(){var e=new Date,e=convertSecondsToTime(~~((travelDate-e)/1e3));$(".js-travel__days").html(e[0]),$(".js-travel__hours").html(e[1]),$(".js-travel__minutes").html(e[2]),$(".js-travel__seconds").html(e[3]),$(".js-travel__days-title").html(declOfNum(e[0],["день","дня","дней"])),$(".js-travel__hours-title").html(declOfNum(e[1],["час","часа","часов"])),$(".js-travel__minutes-title").html(declOfNum(e[2],["минута","минуты","минут"])),$(".js-travel__seconds-title").html(declOfNum(e[3],["секунда","секунды","секунд"]))}function convertSecondsToTime(e){var t=parseInt(e/86400);e%=86400;var a=parseInt(e/3600);return e%=3600,[t,a,parseInt(e/60),e%=60]}function declOfNum(e,t){var a=(e=Math.abs(e)%100)%10;return 10<e&&e<20?t[2]:1<a&&a<5?t[1]:1==a?t[0]:t[2]}updateTimer(),setInterval(updateTimer,1e3);
+	particlesJS("body",{particles:{number:{value:400,density:{enable:!0,value_area:800}},color:{value:"#ffffff"},shape:{type:"image",stroke:{width:3,color:"#fff"},polygon:{nb_sides:5},image:{src:"http://www.dynamicdigital.us/wp-content/uploads/2013/02/starburst_white_300_drop_2.png",width:100,height:100}},opacity:{value:.7,random:!1,anim:{enable:!1,speed:1,opacity_min:.1,sync:!1}},size:{value:5,random:!0,anim:{enable:!1,speed:20,size_min:.1,sync:!1}},line_linked:{enable:!1,distance:50,color:"#ffffff",opacity:.6,width:1},move:{enable:!0,speed:5,direction:"bottom",random:!0,straight:!1,out_mode:"out",bounce:!1,attract:{enable:!0,rotateX:300,rotateY:1200}}},interactivity:{detect_on:"canvas",events:{onhover:{enable:!0,mode:"bubble"},onclick:{enable:!0,mode:"repulse"},resize:!0},modes:{grab:{distance:150,line_linked:{opacity:1}},bubble:{distance:200,size:40,duration:2,opacity:8,speed:3},repulse:{distance:200,duration:.2},push:{particles_nb:4},remove:{particles_nb:2}}},retina_detect:!0});
 </script>
 </body>
 </html>
